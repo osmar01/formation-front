@@ -1,0 +1,143 @@
+.align-title {
+  padding: 12px;
+}
+.title {
+  font-size: 12px;
+  color: #3e4756;
+  opacity: 0.56;
+  letter-spacing: 0.15px;
+  font-weight: 300;
+}
+
+.content-menu {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+.content-button {
+  display: flex;
+  justify-content: flex-start;
+  padding: 2px 24px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  overflow-y: auto;
+}
+.card {
+  max-width: 93px;
+  min-width: 91px;
+  min-height: 91px;
+  text-align: center;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-right: 30px;
+  margin-left: 30px;
+  margin-bottom: 15px;
+}
+
+.name-card {
+  color: #3e4756;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.image-card {
+  margin-bottom: 3px;
+  width: auto;
+  height: 105px;
+}
+
+.icon {
+  width: 48px;
+  height: 46px;
+  min-width: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+@media screen and (min-width: 750px) {
+  
+  .align-title {
+    padding: 12px;
+    margin: 0 19%;
+    margin-top: 2%;
+  }
+
+  .content-button {
+    margin: 0 18%;
+    justify-content: flex-start;
+    padding: 3px 1.5%;
+  }
+
+  .card {
+    min-width: 184px;
+    min-height: 184px;
+    margin-right: 2%;
+    cursor: pointer;
+  }
+  .card:hover {
+    background: steelblue;
+    color: white;
+  }
+
+  .image-card {
+    margin-bottom: 6px;
+    
+  }
+
+  .image-void {
+    width: 45%;
+  }
+  .my-events {
+    cursor: pointer;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .card {
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+
+  .fixed-event-bottom {
+    height: 42%;
+  }
+  .title {
+    font-size: 16px;
+  }
+}
+
+@media screen and (width: 320px) {
+  .card {
+    margin-right: 5px;
+    margin-left: 5px;
+  }
+
+  .fixed-event-bottom {
+    height: 30%;
+  }
+
+  .image-card {
+    height: 44px;
+    
+  }
+}
+
+
+
+@media screen and (width: 768px) {
+  .card {
+    margin-right: 10px;
+    margin-left: 8px;
+  }
+}

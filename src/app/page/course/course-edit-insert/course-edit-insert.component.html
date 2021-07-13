@@ -1,0 +1,97 @@
+<div class="main">
+
+  <div class="content">
+    <form [formGroup]="form">
+
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Categoria</mat-label>
+        <mat-select [(value)]="category"  formControlName="selectCategory" id="selectCategory" (selectionChange)="changeState()">
+          <mat-option [value]="category" *ngFor="let category of listCategorys">
+            {{category.code}} - {{ category.description }}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="form.controls['selectCategory'].hasError('required')">
+          Campo <strong>obrigatório</strong>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field name="description" class="full-width" appearance="outline">
+        <mat-label>Breve descrição do assunto</mat-label>
+        <textarea #textArea maxlength="200" matInput placeholder="" formControlName="description"
+          id="textAreaDescriptionTicket"></textarea>
+        <mat-hint align="end">{{textArea.value?.length || 0}}/200</mat-hint>
+        <mat-error *ngIf="form.controls['description'].hasError('required')">
+          Campo <strong>obrigatório</strong>
+        </mat-error>
+
+      </mat-form-field>
+
+      <mat-form-field class="half-width" appearance="outline">
+        <mat-label>Quantidade de alunos por turma*</mat-label>
+        <input matInput placeholder="Quantidade" formControlName="qtdeStudent" id="inputQtd" maxlength="11">
+        <mat-error *ngIf="form.controls['qtdeStudent'].hasError('required')">
+          Campo <strong>obrigatório</strong>
+        </mat-error>
+        <mat-error *ngIf="form.controls['qtdeStudent'].hasError('pattern')">
+          Somente números
+        </mat-error>
+      </mat-form-field>
+
+      <div class="fields-content">
+        <div class="title half-width">
+          <span>Início</span>
+
+          <mat-form-field name="dateInitial" color="primary" appearance="outline">
+            <mat-label>Data</mat-label>
+            <input matInput [matDatepicker]="dateInitial" formControlName="dateInitial" id="inputDateInitSales"
+              [min]="minDateSelect">
+            <mat-datepicker-toggle matSuffix [for]="dateInitial"></mat-datepicker-toggle>
+            <mat-datepicker #dateInitial color="primary"></mat-datepicker>
+            <mat-error *ngIf="form.controls['dateInitial'].hasError('required')">
+              Campo <strong>obrigatório</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="title half-width">
+          <span>Término</span>
+          
+          <mat-form-field name="dateInitial" color="primary" appearance="outline">
+            <mat-label>Data</mat-label>
+            <input matInput [matDatepicker]="dateFinal" formControlName="dateFinal" id="inputDateFinalSales"
+              [min]="minDateSelect">
+            <mat-datepicker-toggle matSuffix [for]="dateFinal"></mat-datepicker-toggle>
+            <mat-datepicker #dateFinal color="primary"></mat-datepicker>
+            <mat-error *ngIf="form.controls['dateFinal'].hasError('dateNotValid')">
+              A data <strong>não é válida</strong>
+            </mat-error>
+            <mat-error *ngIf="form.controls['dateFinal'].hasError('required')">
+              Campo <strong>obrigatório</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+
+
+      </div>
+
+      <div class="title">
+      </div>
+
+      <div class="fields-content">
+
+      </div>
+
+      <div class="align-buttons">
+        <button mat-raised-button class="buttons delete" (click)="delete()" id="buttonSave">
+          EXCLUIR CURSO
+        </button>
+        <button mat-raised-button class="buttons save" (click)="save()" id="buttonSave">
+          SALVAR CURSO
+        </button>
+      </div>
+
+      
+    </form>
+  </div>
+</div>

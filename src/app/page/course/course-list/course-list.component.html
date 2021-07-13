@@ -1,0 +1,24 @@
+<div class="main">
+
+  <div class="content">
+    <div class="form-search">
+      <img class="icon-search" src="../../../../assets/search.svg" alt="" />
+      <input type="text" [(ngModel)]="value" placeholder="Pesquisar" (keyup)="applyFilter($event)"
+        id="inputApplyFilter" />
+      <img (click)="clear()" class="icon-cancel" src="./assets/cancel-search.svg" alt="" id="imageCancel" />
+    </div>
+
+
+    <mat-selection-list #shoes [multiple]="false">
+      <mat-list-option *ngFor="let course of courses" [value]="course" [routerLink]="['/course/'+ course.id]" >
+        {{course.description}}
+      </mat-list-option>
+    </mat-selection-list>
+
+    <div *ngIf="courses.length == 0">
+      <div>
+        Não há cursos no momento!
+      </div>
+    </div>
+  </div>
+</div>

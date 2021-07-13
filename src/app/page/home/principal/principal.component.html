@@ -1,0 +1,26 @@
+
+<div class="content">
+
+  <div class="content-menu">
+    <div class="align-title">
+      <span class="title">Bem-vindo(a)</span>
+    </div>
+    <div class="content-button">
+
+      <mat-card class="card name-card" (click)="gotoCourse()" id="cardOpenDialogCategory">
+        <div>
+          <img class="image-card" src="./assets/course.png" alt="event">
+        </div>
+        Criar Curso
+      </mat-card>
+
+
+      <mat-card class="card name-card" (click)="gotoCategory()" routerLinkActive="active" id="cardTicket">
+        <div>
+          <img class="image-card" src="./assets/category.png" alt="ticket">
+        </div>
+        Criar Categoria
+      </mat-card>
+    </div>
+  </div>
+</div>
